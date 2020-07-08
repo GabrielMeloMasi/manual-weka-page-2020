@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weka Manual</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <style type="text/css">
+    body{
+   background:aliceblue; 
+}
+p{
+    font-size: larger;
+  
+}
+/*Link não visitado */
+a:link {
+    color: green;
+    text-decoration: none;
+  }
+   
+  /*Link já visitado*/
+  a:visited {
+    color: blue;
+    text-decoration: none;
+  }
+   
+  /*Quando o mouse passa por cima*/
+  a:hover {
+    color: pink;
+    text-decoration: none;
+  }
+   
+  /*Link ativo/selecionado*/
+  a:active {
+    color: yellow;
+    text-decoration: none;
+  }
+  #menu {
+    position: fixed;
+    right: 0;
+    top: 15%;
+    width: 88em;
+    margin-top: -3.5em !important;
+  }
+  h1{
+    font-size: larger;
+    
+  }
+    </style>
+    <p><b>Manual Weka</b></p> 
+    
+ <hr size="6" width="55%" align="left" color="black">
+ <br />
+ <br />
+ <br />
+ <ul id=menu>
+     
+    <li><a href="#Objetivo">Qual o objetivo da ferramenta?</a>
+    <li><a href="#instalar">Como instalar?</a>
+    <li><a href="#ComoUsar">Como usar?</a>
+    <li><a href="#KNN">Anállise KNN</a>
+        <ul>
+            <li><a href="#KNNCMFAZER">Como Fazer?</a></li>
+            <li><a href="#KNNAVALIAR">Como avaliar os resultados?</a></li>
+            <li><a href="#KNNUTILIZAR">Em quais situaçoes podemos utilizar?</a></li>                    
+      </ul>
+
+    </ul>
+ 
+ <div id="Objetivo"><p><b>Qual e o objetivo da ferramenta Weka?</b></p>
+
+O Weka tem como objetivo agregar algoritmos provenientes de diferentes abordagens/paradigmas na sub-área da<br /> 
+inteligência artificial dedicada ao estudo de aprendizagem de máquina.<br /> 
+Essa sub-área pretende desenvolver algoritmos e técnicas que permitam a um computador "aprender"<br /> 
+(no sentido de obter novo conhecimento) quer indutiva quer dedutivamente.<br /> 
+O Weka procede à análise computacional e estatística dos dados fornecidos recorrendo<br /> 
+a técnicas de mineração de dados tentando, indutivamente, a partir dos padrões encontrados gerar <br /> 
+hipóteses para soluções e no extremos inclusive teorias sobre os dados em questão.<br /> 
+</div>
+
+<div id="instalar"></div> <p><b>Como instalar o Weka?</b></p>
+ 
+ Primeiramente Clique no link e faça o <a href="https://sourceforge.net/projects/weka/files/weka-3-8/3.8.4/weka-3-8-4.zip/download?use_mirror=ufpr" target="_blank">Download</a>, em seguida abra o arquivo instalado,<br />
+ o arquivo estara compactado, sendo necessario o <a href="https://www.win-rar.com/start.html?&L=9" target="_blank">Winrar</a>, logo após descompactado <br/>
+clique no arquivo dentro da pasta indicado na imagem logo abaixo:<br/></div>
+<br/>
+	
+<img src="docs/Pagina/weka.png">
+
+
+<div id="ComoUsar"><p><b>Como Usar?</b></p>
+<p>1° PASSO </p>
+Primeiramente vamos ver como podemos colocar nossos dados no weka, na realidade e bem simples, primeiro você pega os dados ou cria, vou 
+</br>deixar esse arquivo <a href="https://covid-insumos.saude.gov.br/paineis/insumos/lista_csv_painel.php?output=csv" target="_blank">CSV</a> como exemplo mas podemos fazer com outros demais arquivos. Agora para conseguirmos usar esses dados no weka </br>
+temos que fazer a conversao desse arquivo para o tipo de arquivo que o weka necessita, que é no caso .arff, agora vamos para a conversão,</br>
+primeiramente abra esse arquivo csv com o bloco de notas, cliquando com o botão direito do mouse, abrir com, bloco de notas. Logo depois </br>
+temos que fazer algumas alteraçoes, primeira alteraçao tirar todas aspas ", podemos usar a propria ferramenta do editor de texto, vá em editar, </br>
+substituir selecione todas as aspas e subistitua por em branco "Nada", o arquivo devera ficar sem aspas algumas somente com as virgulas e os dados.</br>
+    Agora temos que fazer algumas declarações, primeira tag de declaraçao <b>@relation</b> usada para definir o nome do arquivo, segunda tag de declaração</br>
+    <b>@attribute</b> usado para definir o nome do atributo, <b>@data</b> para definir todos os dados que serao usados. Seu arquivo devera ficar igual o do exemplo</br>abaixo:</br>
+<img src="docs/Pagina/covid.png">
+</br>
+Como podemos ver no exemplo não utilizei todos os dados, pois fiz somente para dar uma demonstração, mas se necessario pode ser feito o uso de todos os </br>dados normalmente.
+</br>
+Após ter feito ter feito todas as declarações, vamos salvar o arquivo como o tipo de arquivo que o weka aceita, demonstrarei nas imagens abaixo:
+
+</br>
+<img src="docs/Pagina/1.png">
+</br></br>
+<hr size="2" width="35%" align="left" color="black">
+<img src="docs/Pagina/2.png">
+</br>
+Após ter feito todos esses passos, ja podemos usar esses dados no weka agora vamos lá.</br>
+<p>2° PASSO </p>
+Abriremos o weka, iremos em "explorer", apertamos em "Open file", colocamos o tipo de arquivo de busca em .arff e escolhemos o arquivo que criamos e esta tudo pronto.
+</div>
+</br></br>
+
+<p><b>Anállise KNN</b></p>
+<div id="KNN"></div> <p><b>O que é o KNN?</b></p>
+KNN(K — Nearest Neighbors) é um dos muitos algoritmos ( de aprendizagem supervisionada ) usado no campo de data mining e machine learning, ele é um classificador 
+</br>onde o aprendizado é baseado “no quão similar” é um dado (um vetor) do outro. O treinamento é formado por vetores de n dimensões.
+
+<div id="KNNCMFAZER"></div> <p><b>Como Fazer?</b></p>
+Primeiramente abra a ferramenta Weka, Clique em Explorer, Clique on Open file selecione a pasta onde baixou a ferramenta weka que no meu caso esta na area de trabalho,</br> 
+após isso abra o arquivo mostrado abaixo que iremos usar de exemplo para a explicação:
+</br></br>
+
+<img src="docs/Pagina/KNN2.png">
+</br>
+Abra a pasta data, dentro da pasta data selecione o arquivo mostrado na imagem:
+</br></br>
+<img src="docs/Pagina/KNN3.png">
+</br></br>
+Após aberto o arquivo, vá em classify, clique em choose, vá até a pasta lazy e selecione iBK e pronto,agora e so clicar em start e você ja está utlizando a análise KNN.</br>
+Se quise tambem pode visualizar por imagens apenas cliquando com o botao direito do mouse na onde a imagem indica:
+</br></br>
+<img src="docs/Pagina/KNN5.png">
+</br>
+Agora selecione visualize margin curve que ira le mostrar um grafico com alguns dados.
+</br>
+<div id="KNNAVALIAR"><p><b>Como podemos avaliar os resultados?</b></p>
+Para poder avaliar os resultados priemeiramente temos que saber como funciona o KNN(K Nearest Neighbor).</br>
+Neste algoritmo possuímos uma variável chamada de K, a qual é parte do nome do modelo e também o principal </br>
+parâmetro a ser selecionado. Este parâmetro direcionará a quantidade de vizinhos (neighborn em inglês). Em </br>
+casos de modelos binários, aonde possuímos apenas duas classes, em geral aplicasse valores ímpares a K, mas</br>
+lembre que cada caso é um caso, “No free lunch”. Imagine que temos um valor P1 o qual queremos predizer, </br>
+entre um grupo de duas classes aonde o valor atribuído a K foi 1 (K=1), primeiro iremos identificar o ponto</br>
+mais próximo a ele e depois qual a label que o identifica (classe A por exemplo)</br>
+</br>
+</br>
+<img src="docs/Pagina/exemplo KNN.png"></br>
+
+Após identificar o ponto mais próximo e identificar a label deste ponto (Ex.: Classe A), iremos predizer a </br>
+que classe o ponto P1 faz parte. Para identificar de fato a que grupo o ponto P1 faz parte, iremos realizar </br>
+uma votação aonde a maioria irá dizer a que classe este ponto P1 realmente faz parte.</br>
+
+<div id="KNNUTILIZAR"><p><b>Em quais situações podemos utilizar o KNN?</b></p>
+Aproveitando o tema dessa pergunta irei colocar também algumas vantagens e desvantagens do algoritmo KNN </br>
+O primeiro problema que surge é denominado o curso da dimensionalidade, isso deve ser observado pois na prática</br>
+o número de atributos/variáveis envolvidos em problema tendem a aumentar. Isso faz com que os vetores usados pelo </br>
+KNN para calculo das distâncias tenham dimensões muito grandes o que acaba atrapalhando a localização de algum padrão </br>
+relevante.</br>
+
+Em grandes dimensões as combinações das distâncias entre N pontos quaisquer do hiperespaço tendem a ser muito semelhantes, </br>
+além de outros problemas relacionados a correlação entre variáveis. Para resolver esse tipo de problema existem técnicas </br>
+como o PCA que falarei futuramente.</br>
+
+A boa notícia é que uma vez que conseguir reduzir o número de dimensões ou achar os atributos mais relevantes ele ira funcionar</br>
+ muito bem.</br>
+
+Outro problema relacionado ao KNN é em relação ao processamento necessário na hora de fazer uma predição. Por ser um algoritmo </br>
+que não gera um modelo mas ao invés disso calcula a distância da instância em relação a todas as outras do conjunto de treino </br>
+que foi usado para treiná-lo isso gera uma enorme necessidade de processamento o que pode ate inviabilizar o seu uso em aplicações reais.</br>
+    Mas felizmente a varias situações em que podemos utilizar o KNN(K Nearest Neighbor) logo abixo irei citar algumas delas:</br>
+Assim como antes podemos utilizar a distância euclidiana para calcular a distância entre as instâncias porem a diferença </br>
+reside na forma em que será calculado o valor para ser associar a instância que está sendo testada. 
+</body>
+</html>
